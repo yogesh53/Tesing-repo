@@ -1,0 +1,21 @@
+provider "aws" {
+  alias = "Nvirginia"
+  region = "us-east-1"
+}
+
+provider "aws" {
+  alias = "Oregon"
+  region = "us-west-2"
+}
+
+resource "aws_instance" "example" {
+  ami = "ami-080e1f13689e07408"
+  instance_type = "t2.micro"
+  provider = "aws.Nvirginia"
+}
+
+resource "aws_instance" "example2" {
+  ami = "ami-08116b9957a259459"
+  instance_type = "t2.micro"
+  provider = "aws.Oregon"
+}
