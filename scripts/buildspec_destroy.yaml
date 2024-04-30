@@ -17,6 +17,6 @@ phases:
 
   build:
     commands:
-      - "terraform init"
+      #- "terraform init"
       - "terraform destroy -var-file=uat.tfvars --auto-approve"
 
